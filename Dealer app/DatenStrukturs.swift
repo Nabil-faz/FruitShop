@@ -35,7 +35,7 @@ class ReqFunktionalität: ObservableObject {
         var list: OrdersResponse? = nil
         
         let per = 100
-            let url = URL(string: "http://127.0.0.1:8080/api/orders?page=\(currentPage)&per=\(per)")!
+            let url = URL(string: "http://YOUR Server Address/api/orders?page=\(currentPage)&per=\(per)")!
 
         do {
             
@@ -57,7 +57,7 @@ class ReqFunktionalität: ObservableObject {
     // Completes an order
     func completeOrder(_ order: Orders) {
         
-        let urlString = "http://127.0.0.1:8080/api/orders/\(order.id)/complete"
+        let urlString = "http://YOUR Server Address/api/orders/\(order.id)/complete"
             print(order.id)
 
             guard let url = URL(string: urlString) else {
@@ -111,7 +111,7 @@ class ReqFunktionalität: ObservableObject {
     
     // Cancels an order
     func cancelOrder(_ order: Orders) {
-        let urlString = "http://127.0.0.1:8080/api/orders/\(order.id)/cancel"
+        let urlString = "http://YOUR Server Address/api/orders/\(order.id)/cancel"
             print(order.id)
 
             guard let url = URL(string: urlString) else {
@@ -161,7 +161,7 @@ class ReqFunktionalität: ObservableObject {
     // Deletes an order
     func deleteOrder(_ order: Orders) {
         
-        let urlString = "http://127.0.0.1:8080/api/orders/\(order.id)"
+        let urlString = "http://YOUR Server Address/api/orders/\(order.id)"
             print(order.id)
 
             guard let url = URL(string: urlString) else {
