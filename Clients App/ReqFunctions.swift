@@ -26,7 +26,7 @@ class ReqFunc: ObservableObject {
     func fetchProducts() {
         let per = 5 // Number of elements per page
         
-        let url = URL(string: "http://127.0.0.1:8080/api/products?page=\(currentPageProducts)&per=\(per)")!
+        let url = URL(string: "http://YOUR Server Address/api/products?page=\(currentPageProducts)&per=\(per)")!
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data
@@ -55,7 +55,7 @@ class ReqFunc: ObservableObject {
     func fetchVendors() {
         let per = 100 // Number of elements per page
 
-        let url = URL(string: "http://127.0.0.1:8080/api/vendors?page=\(currentPageVendor)&per=\(per)")!
+        let url = URL(string: "http://YOUR Server Address/api/vendors?page=\(currentPageVendor)&per=\(per)")!
 
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data
@@ -83,7 +83,7 @@ class ReqFunc: ObservableObject {
     
    // Fetches a specific vendor by ID from the API
     func fetchVendorId(vendorId: String, completion: @escaping (Vendors?) -> Void) {
-        let url = URL(string: "http://127.0.0.1:8080/api/vendors/\(vendorId)")!
+        let url = URL(string: "http://YOUR Server Address/api/vendors/\(vendorId)")!
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
@@ -107,7 +107,7 @@ class ReqFunc: ObservableObject {
     func fetchCategories() {
         let per = 100 // Number of elements per page
 
-        let url = URL(string: "http://127.0.0.1:8080/api/categories?page=\(currentPageCategory)&per=\(per)")!
+        let url = URL(string: "http://YOUR Server Address/api/categories?page=\(currentPageCategory)&per=\(per)")!
 
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data
@@ -132,7 +132,7 @@ class ReqFunc: ObservableObject {
     
     // Fetches a specific category by ID from the API
     func fetchCategoryId(categoryId: String, completion: @escaping (Categories?) -> Void) {
-        let url = URL(string: "http://127.0.0.1:8080/api/categories/\(categoryId)")!
+        let url = URL(string: "http://YOUR Server Address/api/categories/\(categoryId)")!
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
@@ -154,7 +154,7 @@ class ReqFunc: ObservableObject {
     
     // Makes a payment for a specific order
     func makePayment(orderID: String, paypalTransactionID: String, completion: @escaping (Bool) -> Void) {
-        let urlString = "http://127.0.0.1:8080/api/orders/\(orderID)/pay"
+        let urlString = "http://YOUR Server Address/api/orders/\(orderID)/pay"
        
 
         guard let url = URL(string: urlString) else {
@@ -225,7 +225,7 @@ class ReqFunc: ObservableObject {
             state: "paymentPending"
         )
 
-        guard let url = URL(string: "http://127.0.0.1:8080/api/orders") else {
+        guard let url = URL(string: "http://YOUR Server Address/api/orders") else {
              print("invalid URL")
             return
         }
@@ -274,7 +274,7 @@ class ReqFunc: ObservableObject {
         func fetchProductsCT(for categoryId: String) {
             let per = 100 // Number of elements per page
             
-            let url = URL(string: "http://127.0.0.1:8080/api/products?category=\(categoryId)&page=\(currentPageProducts)&per=\(per)")!
+            let url = URL(string: "http://YOUR Server Address/api/products?category=\(categoryId)&page=\(currentPageProducts)&per=\(per)")!
             
             // Perform the network request to fetch the products
             URLSession.shared.dataTask(with: url) { data, _, error in
@@ -301,7 +301,7 @@ class ReqFunc: ObservableObject {
     func fetchProductsCT_VD() {
         let per = 100 // Number of elements per page
         
-        let url = URL(string: "http://127.0.0.1:8080/api/products?page=\(currentPageProducts)&per=\(per)")!
+        let url = URL(string: "http://YOUR Server Address/api/products?page=\(currentPageProducts)&per=\(per)")!
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data
