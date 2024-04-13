@@ -30,7 +30,7 @@ class CacheFunc: ObservableObject {
     // Function to fetch an image from the API
     func fetchImageFromAPI(productId: String, completion: @escaping (UIImage?) -> Void) {
         
-        guard let url = URL(string: "http://127.0.0.1:8080/api/products/\(productId)/photo") else {
+        guard let url = URL(string: "http://YOUR Server Address/api/products/\(productId)/photo") else {
             completion(nil)
             return
         }
