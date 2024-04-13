@@ -193,7 +193,7 @@ class CartViewModel: ObservableObject {
 
     // Fetch product details for a cart item from an API endpoint
     func getProductDetails(for cartItem: CartEntry, completion: @escaping (Products?) -> Void) {
-        let urlString = "http://127.0.0.1:8080/api/products/\(cartItem.productId)"
+        let urlString = "http://YOU Server Address/api/products/\(cartItem.productId)"
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
